@@ -1,0 +1,14 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+}
+:root {
+  --primary-color: #4880ff;
+  --primary-font: #202224;
+  --primary-bg: #f5f6fa;
+}
+ul {
+  list-style: none;
+}

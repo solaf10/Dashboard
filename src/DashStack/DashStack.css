@@ -1,0 +1,123 @@
+.page {
+  display: flex;
+  min-height: 100vh;
+}
+.page aside {
+  width: 230px;
+  position: relative;
+}
+.page aside .logo {
+  margin-bottom: 50px;
+  font-size: 20px;
+  font-weight: 800;
+  text-align: center;
+}
+.page aside .logo span:first-of-type {
+  color: var(--primary-color);
+}
+.page .container {
+  position: fixed;
+  width: 230px;
+  height: 100vh;
+  padding-top: 10px;
+  padding-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--primary-font);
+}
+.page .container ul {
+  padding: 22px;
+  margin: 0px auto;
+}
+.page .container ul li {
+  padding: 8px 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.page .container .active {
+  position: relative;
+  color: white;
+  background-color: var(--primary-color);
+}
+.page .container .active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -26px;
+  width: 9px;
+  height: 100%;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+}
+.page aside button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.page aside button span {
+  color: var(--primary-font);
+}
+/* main */
+main {
+  flex: 1;
+}
+main .content {
+  padding: 36px 32px;
+  min-height: 100vh;
+  background-color: var(--primary-bg);
+}
+main .content header {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .content header p {
+  font-weight: 700;
+  font-size: 28px;
+}
+main .content header button {
+  padding: 12px 21px;
+  border-radius: 7px;
+  border: 1px solid #4880ff;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  background-color: var(--primary-color);
+}
+main .content table {
+  width: 100%;
+  border-radius: 8px;
+  border: 0.6px solid #d5d5d5;
+  background-color: white;
+  border-collapse: collapse;
+}
+main .content table thead {
+}
+main .content table thead tr {
+  border-bottom: 0.6px solid #d5d5d5;
+}
+main .content table tbody {
+}
+main .content table tbody tr:not(:last-of-type) {
+  border-bottom: 0.4px solid #979797;
+}
+main .content table tbody tr td,
+main .content table thead tr th {
+  text-align: center;
+  padding: 30px;
+}
+main .content table {
+}
+main .content table {
+}

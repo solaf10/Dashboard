@@ -1,0 +1,23 @@
+table tbody tr img {
+  width: 56px;
+  height: 60px;
+  border-radius: 8px;
+}
+table tbody td button {
+  padding: 9px 16px;
+  border-radius: 20px;
+  border: 0.6px solid #d5d5d5;
+  background-color: transparent;
+  cursor: pointer;
+}
+table tbody td button.edit {
+  border-right: none;
+  border-radius: 8px 0px 0px 8px;
+}
+table tbody td button.delete {
+  border-radius: 0px 8px 8px 0px;
+}
+table tbody td button img {
+  width: 15px;
+  height: 15px;
+}

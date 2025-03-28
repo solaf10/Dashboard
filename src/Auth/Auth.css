@@ -1,0 +1,121 @@
+.auth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--primary-color);
+  background-image: url("/public/assets/Shape.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.sign {
+  padding: 25px 32px;
+  width: 498px;
+  min-height: 620px;
+  border-radius: 16px;
+  background-color: white;
+}
+.sign .title {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.sign .title h1 {
+  font-size: 32px;
+}
+.sign .title p {
+  font-size: 18px;
+}
+.sign form label {
+  margin-bottom: 4px;
+}
+.sign form > div {
+  display: flex;
+  flex-direction: column;
+}
+.sign form input {
+  padding: 13px 17px;
+  height: 45px;
+  border-radius: 6px;
+  background-color: #f1f4f9;
+  border: 1px solid #d8d8d8;
+}
+.sign form .submit input {
+  padding: 13px;
+  margin-bottom: 8px;
+  width: 100%;
+  color: white;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+}
+.sign .auth-footer {
+  text-align: center;
+  color: #202224;
+  font-size: 14px;
+}
+.sign .auth-footer a {
+  margin-left: 2px;
+  color: #5a8cff;
+}
+/* sign up only*/
+.sign.signup form {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px 19px;
+}
+.sign.signup form > div.email,
+.sign.signup form > div.submit {
+  grid-column: span 2;
+}
+.sign.signup form .profile-image input {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  opacity: 0;
+}
+.sign.signup form .upload {
+  margin-bottom: 5px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #4880ff4d;
+}
+/* sign in only */
+.sign.signin {
+  position: relative;
+}
+.sign.signin form > div {
+  margin-bottom: 16px;
+}
+.sign.signin form .auth-footer {
+  position: absolute;
+  width: 100%;
+  bottom: 25px;
+  left: 0;
+  display: block;
+}
+.sign.signin form .auth-footer .submit input {
+  width: calc(100% - 64px);
+}
+@media (max-width: 768px) {
+  .auth {
+    padding: 20px;
+  }
+  .sign.signin {
+    height: 500px;
+  }
+}
+@media (max-width: 550px) {
+  .sign {
+    width: 100%;
+  }
+  .sign.signup form {
+    display: flex;
+    flex-direction: column;
+  }
+}

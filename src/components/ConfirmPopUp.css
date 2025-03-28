@@ -1,0 +1,49 @@
+.overlay {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #00000080;
+}
+.overlay .content {
+  width: 50%;
+  height: 321px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  border-radius: 20px;
+  background-color: white;
+}
+.overlay .content p {
+  font-size: 24px;
+  font-weight: bold;
+}
+.overlay .content .btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 26px;
+}
+.overlay .content .btns button {
+  width: 140px;
+  height: 50px;
+  border-radius: 4px;
+  font-size: 15px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.overlay .content .btns button.confirm {
+  background-color: #ef3826;
+}
+.overlay .content .btns button.cancel {
+  background-color: var(--primary-color);
+}
+.overlay {
+}
