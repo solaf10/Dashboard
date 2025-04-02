@@ -41,7 +41,9 @@
   background-color: #f1f4f9;
   border: 1px solid #d8d8d8;
 }
-.sign form .submit input {
+.sign form .submit input,
+.sign form .submit .btn {
+  height: auto;
   padding: 13px;
   margin-bottom: 8px;
   width: 100%;
@@ -93,6 +95,7 @@
   margin-bottom: 16px;
 }
 .sign.signin form .auth-footer {
+  padding: 0px 32px;
   position: absolute;
   width: 100%;
   bottom: 25px;

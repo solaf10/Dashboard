@@ -5,6 +5,21 @@ nav {
   align-items: center;
   padding: 0px 32px;
 }
+nav .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+nav .menu .icon-holder {
+  display: none;
+}
+nav .menu .icon-holder {
+  cursor: pointer;
+}
+nav .menu .icon {
+  margin-bottom: -2px;
+}
 nav .logo {
   font-weight: bold;
   font-size: 16px;
@@ -21,4 +36,10 @@ nav .profile-infos img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+}
+@media (max-width: 768px) {
+  nav .menu .icon-holder,
+  .page aside .header .close {
+    display: block;
+  }
 }

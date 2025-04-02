@@ -4,13 +4,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background: #00000080;
 }
 .overlay .content {
-  width: 50%;
+  padding: 40px;
+  min-width: 50%;
   height: 321px;
   display: flex;
   flex-direction: column;
@@ -21,13 +22,15 @@
   background-color: white;
 }
 .overlay .content p {
+  text-align: center;
   font-size: 24px;
   font-weight: bold;
 }
 .overlay .content .btns {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 26px;
 }
 .overlay .content .btns button {
@@ -38,6 +41,10 @@
   color: white;
   border: none;
   cursor: pointer;
+  transition: 0.5s;
+}
+.overlay .content .btns button:hover {
+  transform: scale(0.95);
 }
 .overlay .content .btns button.confirm {
   background-color: #ef3826;

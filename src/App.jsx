@@ -6,6 +6,7 @@ import Login from "./Auth/Login";
 import SignUp from "./Auth/SignUp";
 import DashStack from "./DashStack/DashStack";
 import Products from "./DashStack/Products";
+import ControlProduct from "./DashStack/ControlProduct";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         </Route>
         <Route path="products" element={<DashStack />}>
           <Route path="/products" element={<Products />} />
+          <Route path="add" element={<ControlProduct process="Add" />} />
+          <Route path=":id" element={<ControlProduct process="Edit" />} />
         </Route>
       </Routes>
     </BrowserRouter>

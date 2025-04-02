@@ -2,10 +2,12 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Auth.css";
 import { useState } from "react";
 import axios from "axios";
+import Loader from "../components/Loader/Loader";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const data = {
     email,
@@ -13,12 +15,14 @@ const Login = () => {
   };
   function handleLogIn(e) {
     e.preventDefault();
+    setIsLoading(true);
     axios
       .post("https://vica.website/api/login", data)
       .then((res) => {
-        console.log(res.data);
+        setIsLoading(false);
         localStorage.setItem("token", `Bearer ${res.data.token}`);
-        navigate("/products", { state: res.data.user.first_name });
+        localStorage.setItem("userName", res.data.user.first_name);
+        navigate("/products");
       })
       .catch((err) => console.log(err));
   }
@@ -49,7 +53,13 @@ const Login = () => {
         </div>
         <div className="auth-footer">
           <div className="submit">
-            <input type="submit" value="Sign In" />
+            {isLoading ? (
+              <button className="btn">
+                <Loader isbtn={true} />
+              </button>
+            ) : (
+              <input type="submit" value="Sign In" />
+            )}
           </div>
           <span>Don’t have an account? </span>
           <Link to="/signup">Sign Up</Link>

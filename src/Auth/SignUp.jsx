@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Auth.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Loader from "../components/Loader/Loader";
 
 const SignUp = () => {
   const [first_name, setFirstName] = useState("");
@@ -10,6 +11,7 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [password_confirmation, setPasswordConfirmation] = useState("");
   const [profile_image, setProfileImage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const data = {
     first_name,
@@ -22,8 +24,8 @@ const SignUp = () => {
   };
 
   function handleRegister(e) {
+    setIsLoading(true);
     e.preventDefault();
-    console.log(first_name);
     axios
       .post("https://vica.website/api/register", data, {
         headers: {
@@ -31,7 +33,7 @@ const SignUp = () => {
         },
       })
       .then((res) => {
-        console.log(res.data);
+        setIsLoading(false);
         localStorage.setItem("token", `Bearer ${res.data.data.token}`);
         localStorage.setItem("userName", first_name);
         // navigate("/products", { state: first_name });
@@ -99,11 +101,17 @@ const SignUp = () => {
             onChange={(e) => setProfileImage(e.target.files[0])}
           />
           <div className="upload">
-            <img src="/public/assets/Upload icon.png" alt="" />
+            <img src="/public/assets/Upload icon.svg" alt="" />
           </div>
         </div>
         <div className="submit">
-          <input type="submit" value="Sign Up" />
+          {isLoading ? (
+            <button className="btn">
+              <Loader isbtn={true} />
+            </button>
+          ) : (
+            <input type="submit" value="Sign Up" />
+          )}
         </div>
       </form>
       <div className="auth-footer">
