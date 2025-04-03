@@ -7,7 +7,8 @@ import Loader from "../components/Loader/Loader";
 const ControlProduct = ({ process }) => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState({});
+  const [defaultImage, setDefaultImage] = useState({});
   const [isGettingLoading, setIsGettingLoading] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
@@ -61,7 +62,7 @@ const ControlProduct = ({ process }) => {
           setIsGettingLoading(false);
           setName(res.data.name);
           setPrice(res.data.price);
-          setImage(res.data.image_url);
+          setDefaultImage(res.data.image_url);
         })
         .catch((err) => console.log(err));
     }, []);
@@ -114,11 +115,11 @@ const ControlProduct = ({ process }) => {
                 <img
                   src={
                     process == "Add"
-                      ? "/public/assets/Upload icon.svg"
+                      ? "/assets/Upload icon.svg"
                       : `${
-                          typeof image == "string"
-                            ? image
-                            : "/public/assets/Upload icon.svg"
+                          !(image instanceof File) && defaultImage
+                            ? defaultImage
+                            : "/assets/Upload icon.svg"
                         }`
                   }
                   alt="product image"

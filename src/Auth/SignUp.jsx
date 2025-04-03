@@ -101,7 +101,7 @@ const SignUp = () => {
             onChange={(e) => setProfileImage(e.target.files[0])}
           />
           <div className="upload">
-            <img src="/public/assets/Upload icon.svg" alt="" />
+            <img src="/assets/Upload icon.svg" alt="" />
           </div>
         </div>
         <div className="submit">

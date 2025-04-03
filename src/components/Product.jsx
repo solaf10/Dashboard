@@ -17,10 +17,10 @@ const Product = ({ id, name, price, image, handleOpenPopUp }) => {
         </td>
         <td data-label="Action">
           <button className="edit" onClick={() => navigate(`/products/${id}`)}>
-            <img src="/public/assets/pencil-write.png" alt="edit" />
+            <img src="/assets/pencil-write.png" alt="edit" />
           </button>
           <button className="delete" onClick={() => handleOpenPopUp(id)}>
-            <img src="/public/assets/bin.png" alt="del" />
+            <img src="/assets/bin.png" alt="del" />
           </button>
         </td>
       </tr>

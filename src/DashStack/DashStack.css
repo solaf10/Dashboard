@@ -22,8 +22,9 @@
 }
 .page aside .header .close {
   display: none;
-  margin-bottom: -4px;
+  /* margin-bottom: -4px; */
   font-size: 20px;
+  cursor: pointer;
 }
 .page aside .logo span:first-of-type {
   color: var(--primary-color);
@@ -39,6 +40,7 @@
   justify-content: space-between;
   color: var(--primary-font);
   background-color: white;
+  z-index: 100;
 }
 .page .container ul {
   padding: 22px;
@@ -88,6 +90,7 @@
   color: var(--primary-font);
 }
 table .loader-holder {
+  width: 100%;
   display: flex;
   justify-content: center;
 }

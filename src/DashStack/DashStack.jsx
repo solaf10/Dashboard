@@ -63,17 +63,17 @@ const DashStack = () => {
             </div>
             <ul>
               <li>
-                <img src="/public/assets/dashboard-icon.png" />
+                <img src="/assets/dashboard-icon.png" />
                 <p>Dashboard</p>
               </li>
               <li className="active">
-                <img src="/public/assets/products-icon.png" />
+                <img src="/assets/products-icon.png" />
                 <p>Products</p>
               </li>
             </ul>
           </div>
           <button onClick={() => setIsShow((prev) => !prev)}>
-            <img src="/public/assets/logout-icon.png" />
+            <img src="/assets/logout-icon.png" />
             <span>Logout</span>
           </button>
         </div>
@@ -82,7 +82,7 @@ const DashStack = () => {
         <NavBar
           title="Products"
           setIsOpen={setIsOpen}
-          userImage="/public/assets/profile.png"
+          userImage="/assets/profile.png"
           // userName={location.state}
           userName={userName}
         />
